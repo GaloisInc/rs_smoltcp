@@ -94,7 +94,7 @@ impl phy::TxToken for TxToken {
     {
         let mut lower = self.lower.borrow_mut();
         let mut buffer = vec![0; len];
-        let result = f(&mut buffer); // fills buffer with stuff
+        let result = f(&mut buffer);
         lower.send(&mut buffer[..]).unwrap();
         result
     }
